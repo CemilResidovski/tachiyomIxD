@@ -2,6 +2,7 @@ package eu.kanade.tachiyomi.ui.main
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.TaskStackBuilder
 import android.support.v4.view.GravityCompat
@@ -19,6 +20,7 @@ import eu.kanade.tachiyomi.ui.recent_updates.RecentChaptersFragment
 import eu.kanade.tachiyomi.ui.recently_read.RecentlyReadFragment
 import eu.kanade.tachiyomi.ui.setting.SettingsActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_manga.*
 import kotlinx.android.synthetic.main.toolbar.*
 import uy.kohesive.injekt.injectLazy
 
@@ -150,6 +152,28 @@ class MainActivity : BaseActivity() {
         } else {
             super.onActivityResult(requestCode, resultCode, data)
         }
+    }
+
+    // Save/restore state of checked item in bottom bar
+    // Keeps the correct item checked on rotation
+    override fun onSaveInstanceState(outState: Bundle?) {
+        var indexChecked = 3
+        for (i in 0..bottom_view.menu.size()-1) {
+            if (bottom_view.menu.getItem(i).isChecked) {
+                indexChecked = i
+            }
+        }
+        outState?.putInt("indexChecked", indexChecked)
+        super.onSaveInstanceState(outState)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+        super.onRestoreInstanceState(savedInstanceState)
+        var index = 0
+        if (savedInstanceState != null) {
+            index = savedInstanceState.getInt("indexChecked")
+        }
+        bottom_view.menu.getItem(index).isChecked = true
     }
 
     // because start screen is not in nav bar
