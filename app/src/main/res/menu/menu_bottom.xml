@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/bottom_feature"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_bottom_library"
+            android:enabled="true"
+            android:icon="@drawable/ic_book_black_24dp"
+            android:title="@string/label_library" />
+        <item
+            android:id="@+id/nav_bottom_recently_read"
+            android:enabled="true"
+            android:icon="@drawable/ic_glasses_black_24dp"
+            android:title="@string/label_recent_manga" />
+        <item
+            android:id="@+id/nav_bottom_catalogues"
+            android:enabled="true"
+            android:icon="@drawable/ic_explore_black_24dp"
+            android:title="@string/label_catalogues" />
+        <item
+            android:id="@+id/unchecked_bottom_item"
+            android:title=""/>
+
+        <!--app:itemTextColor="@color/bottom_nav_color"
+            app:itemIconTint="@color/bottom_nav_color" för varje item-->
+    </group>
+</menu>
