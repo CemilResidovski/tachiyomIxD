@@ -18,6 +18,7 @@
         <item
             android:id="@+id/unchecked_nav_item"
             android:visible="false"
+            android:enabled="false"
             android:title=""/>
     </group>
     <group android:id="@+id/group_settings"

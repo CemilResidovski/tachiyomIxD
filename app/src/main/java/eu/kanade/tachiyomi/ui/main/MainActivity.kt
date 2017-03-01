@@ -52,9 +52,7 @@ class MainActivity : BaseActivity() {
         BottomNavShiftHelper.disableShiftMode(bottom_view)
 
         // Remove invisible MenuItems from view completely
-        //bottom_view.menu.findItem(R.id.unchecked_bottom_item).isVisible = false
-        //invalidateOptionsMenu()
-        //nav_view.findViewById(R.id.unchecked_nav_item).visibility = View.GONE
+        bottom_view.findViewById(R.id.unchecked_bottom_item).visibility = View.GONE
 
         // Handle bottom bar
         bottom_view.setOnNavigationItemSelectedListener { item ->
