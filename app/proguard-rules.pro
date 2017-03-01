@@ -96,3 +96,8 @@
 
 # Duktape
 -keep class com.squareup.duktape.** { *; }
+
+# Bottom navigation view, give access to disable shifting view
+-keepclassmembers class android.support.design.internal.BottomNavigationMenuView {
+    boolean mShiftingMode;
+}

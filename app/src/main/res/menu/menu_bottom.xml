@@ -19,6 +19,8 @@
             android:title="@string/label_catalogues" />
         <item
             android:id="@+id/unchecked_bottom_item"
+            android:visible="false"
+            android:enabled="false"
             android:title=""/>
 
         <!--app:itemTextColor="@color/bottom_nav_color"
