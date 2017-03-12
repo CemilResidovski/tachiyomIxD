@@ -103,12 +103,12 @@ class RecentChaptersFragment:
         setToolbarTitle(R.string.label_recent_updates)
 
         // Disable toolbar elevation, it looks better with sticky headers.
-        activity.appbar.disableElevation()
+        //activity.appbar.disableElevation()
     }
 
     override fun onDestroyView() {
         // Restore toolbar elevation.
-        activity.appbar.enableElevation()
+        //activity.appbar.enableElevation()
         super.onDestroyView()
     }
 

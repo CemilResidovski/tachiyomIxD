@@ -45,21 +45,28 @@
             app:menu="@menu/menu_bottom">
         </android.support.design.widget.BottomNavigationView>
 
-        <FrameLayout
-            android:id="@+id/frame_container"
+        <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
             android:layout_below="@id/appbar"
-            android:layout_above="@id/bottom_view">
+            android:layout_above="@id/bottom_view"
+            android:fillViewport="true">
 
-            <eu.kanade.tachiyomi.widget.EmptyView
-                android:id="@+id/empty_view"
-                android:visibility="gone"
-                android:layout_width="wrap_content"
-                android:layout_gravity="center"
-                android:layout_height="wrap_content"/>
+            <FrameLayout
+                android:id="@+id/frame_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        </FrameLayout>
+                <eu.kanade.tachiyomi.widget.EmptyView
+                    android:id="@+id/empty_view"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"/>
+            </FrameLayout>
+
+        </android.support.v4.widget.NestedScrollView>
 
     </RelativeLayout>
 

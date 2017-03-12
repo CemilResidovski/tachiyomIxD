@@ -32,7 +32,7 @@ class MainActivity : BaseActivity() {
         when (preferences.startScreen()) {
             1 -> R.id.nav_bottom_library
             2 -> R.id.nav_bottom_recently_read
-            3 -> R.id.nav_drawer_recent_updates
+            3 -> R.id.nav_bottom_updates
             else -> R.id.nav_bottom_library
         }
     }
@@ -69,6 +69,7 @@ class MainActivity : BaseActivity() {
                     R.id.nav_bottom_library -> setFragment(LibraryFragment.newInstance(), id)
                     R.id.nav_bottom_recently_read -> setFragment(RecentlyReadFragment.newInstance(), id)
                     R.id.nav_bottom_catalogues -> setFragment(CatalogueFragment.newInstance(), id)
+                    R.id.nav_bottom_updates -> setFragment(RecentChaptersFragment.newInstance(), id)
                 }
             }
             true
@@ -91,7 +92,6 @@ class MainActivity : BaseActivity() {
             val oldFragment = supportFragmentManager.findFragmentById(R.id.frame_container)
             if (oldFragment == null || oldFragment.tag.toInt() != id) {
                 when (id) {
-                    R.id.nav_drawer_recent_updates -> setFragment(RecentChaptersFragment.newInstance(), id)
                     R.id.nav_drawer_latest_updates -> setFragment(LatestUpdatesFragment.newInstance(), id)
                     R.id.nav_drawer_downloads -> startActivity(Intent(this, DownloadActivity::class.java))
                     R.id.nav_drawer_settings -> {

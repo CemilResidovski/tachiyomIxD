@@ -18,6 +18,10 @@
             android:icon="@drawable/ic_explore_black_24dp"
             android:title="@string/label_catalogues" />
         <item
+            android:id="@+id/nav_bottom_updates"
+            android:icon="@drawable/ic_update_black_24dp"
+            android:title="@string/label_updates" />
+        <item
             android:id="@+id/unchecked_bottom_item"
             android:visible="false"
             android:enabled="false"

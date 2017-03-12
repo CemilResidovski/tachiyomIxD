@@ -3,10 +3,6 @@
     <group android:id="@+id/group_feature"
            android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_drawer_recent_updates"
-            android:icon="@drawable/ic_update_black_24dp"
-            android:title="@string/label_recent_updates" />
-        <item
             android:id="@+id/nav_drawer_latest_updates"
             android:icon="@drawable/ic_watch_later_black_24dp"
             android:title="@string/label_latest_updates" />
